@@ -14,6 +14,10 @@
 
 **优秀线**：会写有意义的 PR 描述（背景、改动、测试、风险）；会做 bisect 定位引入 bug 的提交；理解 monorepo 和多仓库的取舍。
 
+**推荐资源**：
+
+- Scott Chacon、Ben Straub《Pro Git》——免费在线（git-scm.com/book），Git 的权威参考，读第 3、5 章就够日常用
+
 **常见误区**：把 Git 当成网盘——一个提交里塞几十个文件、提交信息写“fix”或“update”。提交历史是给未来的自己和同事看的，不是给机器看的。
 
 ## 5.2 设计模式：前人的经验，别重复发明
@@ -29,8 +33,8 @@
 
 **推荐资源**：
 
-- Erich Gamma《设计模式：可复用面向对象软件的基础》（GoF）——原典，读重点模式即可
-- 《Head First 设计模式》——更易读的入门书
+- Erich Gamma 等《设计模式：可复用面向对象软件的基础》（GoF）——原典，读重点模式即可
+- Eric Freeman、Elisabeth Robson《Head First 设计模式》——更易读的入门书
 - Robert C. Martin《敏捷软件开发：原则、模式与实践》——把模式放回工程语境里讲
 
 ## 5.3 架构：从“能跑”到“能长大”
@@ -47,6 +51,11 @@
 
 **常见误区**：上来就画微服务架构图。一个三人团队的项目用微服务，是用分布式系统的复杂度换取根本不需要的扩展性。
 
+**推荐资源**：
+
+- Robert C. Martin《架构整洁之道》（Clean Architecture）——分层、边界、依赖规则
+- Martin Kleppmann《设计数据密集型应用》（Designing Data-Intensive Applications）——数据、分布式、一致性的取舍，系统设计的案头书
+
 ## 5.4 工程实践：让质量成为默认
 
 - **持续集成（CI）**：每次提交自动跑测试、lint、构建。合格线：自己的项目接了 CI，测试失败时提交会被拦下来。
@@ -57,7 +66,7 @@
 
 **推荐资源**：
 
-- 《Google 软件工程》（Software Engineering at Google）——免费在线，大规模工程实践的集大成
+- Titus Winters 等《Google 软件工程》（Software Engineering at Google）——免费在线，大规模工程实践的集大成
 - Jez Humble《持续交付》（Continuous Delivery）——CI/CD 的经典
 - 《凤凰项目》（The Phoenix Project）——用小说讲 DevOps，读着不累
 
@@ -73,10 +82,20 @@
 
 **优秀线**：长期维护一个自己的开源项目（哪怕很小）；能参与一个中型项目的讨论和设计；理解开源许可证的区别（MIT / Apache / GPL）。
 
+**推荐资源**：
+
+- Karl Fogel《Producing Open Source Software》——免费在线（producingoss.com），开源协作的操作手册
+
 **常见误区**：
 
 - 只想着“给大项目提 PR 镀金”，却不愿意从修文档、补测试这些小事做起。维护者最欢迎的，恰恰是这些小事。
 - 提 PR 之前不读贡献指南（CONTRIBUTING），不跑测试，不遵守代码风格——这是最快被拒绝的方式。
+
+## 自测题
+
+1. **CI 拦错**：给自己的项目接 CI，故意提交一段测试失败的代码，确认 CI 把它拦下来；修好后确认变绿。验证：CI 记录里有一红一绿两次运行。
+2. **走完 PR 流程**：找一个开源仓库，读它的 CONTRIBUTING，按要求提一个 PR（修文档、补测试都行），回应 review、走完合并流程。验证：PR 被合并，或收到一条有实质内容的 review。
+3. **bisect 定位**：在一个已知有 bug 的仓库里，用 `git bisect` 定位是哪次提交引入了这个 bug。验证：能说出提交哈希，并讲清那次提交改了什么、为什么引入 bug。
 
 ## 本章总结
 

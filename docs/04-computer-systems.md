@@ -18,8 +18,8 @@
 
 **推荐资源**：
 
-- Randal E. Bryant《深入理解计算机系统》（CSAPP）——这本书是这一章的半壁江山，第 2、3、6 章必读
-- David A. Patterson《计算机组成与设计》（Computer Organization and Design）——更系统的教材
+- Randal E. Bryant、David R. O'Hallaron《深入理解计算机系统》（CSAPP）——这本书是这一章的半壁江山，第 2、3、6 章必读
+- David A. Patterson、John L. Hennessy《计算机组成与设计》（Computer Organization and Design）——更系统的教材
 - CMU 15-213 Introduction to Computer Systems（公开课）——CSAPP 的配套课，实验极好
 
 ## 4.2 操作系统：资源管理的艺术
@@ -41,9 +41,9 @@
 
 **推荐资源**：
 
-- Remzi Arpaci-Dusseau《操作系统导论》（Operating Systems: Three Easy Pieces，OSTEP）——免费在线，写得极好，首选
-- Abraham Silberschatz《操作系统概念》（恐龙书）——体系最全的参考书
-- MIT 6.828 / xv6——读一个真实的小内核，是理解操作系统的最快路径
+- Remzi Arpaci-Dusseau、Andrea Arpaci-Dusseau《操作系统导论》（Operating Systems: Three Easy Pieces，OSTEP）——免费在线，写得极好，首选
+- Abraham Silberschatz 等《操作系统概念》（恐龙书）——体系最全的参考书
+- MIT 6.1810（原 6.828）/ xv6——读一个真实的小内核，是理解操作系统的最快路径
 - CSAPP 第 8、9、10 章——进程、虚拟内存、系统级 I/O 的精华
 
 ## 4.3 计算机网络：分布式世界的基础设施
@@ -65,7 +65,7 @@
 
 **推荐资源**：
 
-- James F. Kurose《计算机网络：自顶向下方法》——从应用层往下讲，最符合直觉的教材
+- James F. Kurose、Keith W. Ross《计算机网络：自顶向下方法》——从应用层往下讲，最符合直觉的教材
 - 《TCP/IP 详解 卷 1》（W. Richard Stevens）——想深入时的参考书
 - Stanford CS144 Introduction to Computer Networking（公开课）——配实验，极好
 - 《HTTP 权威指南》——做 Web 开发时的案头书
@@ -80,7 +80,7 @@
 - SQL：增删改查、JOIN、聚合、子查询、窗口函数——能写中等复杂度的查询
 - 索引：B+ 树索引、哈希索引、什么时候建索引、为什么索引不是越多越好
 - 事务：ACID、隔离级别（读未提交/读已提交/可重复读/串行化）、脏读/不可重复读/幻读
--  NoSQL 入门：键值、文档、列族、图——知道它们各自适合什么场景，以及“什么时候不该用 NoSQL”
+- NoSQL 入门：键值、文档、列族、图——知道它们各自适合什么场景，以及“什么时候不该用 NoSQL”
 - 数据库设计：ER 图、从需求到表结构
 
 **优秀线**：理解查询优化器是怎么工作的（执行计划、EXPLAIN）；理解 MVCC；从零实现一个简单的 KV 存储或 B+ 树。
@@ -89,10 +89,10 @@
 
 **推荐资源**：
 
-- Abraham Silberschatz《数据库系统概念》——体系最全的教材
+- Abraham Silberschatz 等《数据库系统概念》——体系最全的教材
 - CMU 15-445 Introduction to Database Systems（公开课）——讲得极好，实验是写一个数据库
 - 《高性能 MySQL》——做后端时的案头书
-- 《Redis 设计与实现》——理解内存数据库的好入口
+- 黄健宏《Redis 设计与实现》——理解内存数据库的好入口
 
 ## 4.5 编译原理：理解语言是怎么变成机器代码的
 
@@ -112,10 +112,16 @@
 
 **推荐资源**：
 
-- Alfred V. Aho《编译原理》（龙书）——经典教材，当参考书查
+- Alfred V. Aho 等《编译原理》（龙书）——经典教材，当参考书查
 - Robert Nystrom《Crafting Interpreters》——免费在线，从零写两个解释器，是学编译最好的实践路径
 - Andrew Appel《现代编译原理：C 语言描述》（虎书）——更贴近实现
 - Stanford CS143 Compilers（公开课）——配实验，写一个完整编译器
+
+## 自测题
+
+1. **制造并修复死锁**：写一个多线程程序，故意用“两个线程以相反顺序拿两把锁”的方式制造死锁，稳定复现后，用“破坏四个必要条件之一”的方法修掉它。验证：修前每次运行都死锁，修后跑 100 次不再出现。
+2. **抓包**：用 Wireshark 或 tcpdump 抓一次真实的 HTTP 请求，说出三次握手和 TLS 握手分别发生在第几个包。验证：能指着包列表说出 SYN、SYN-ACK、ACK 和 ClientHello 的位置。
+3. **索引对比**：给一张百万行级别的表设计索引，用 EXPLAIN 对比加索引前后的执行计划。验证：能说出“为什么这个查询变快了、索引的代价是什么（写放大、空间）”。
 
 ## 本章总结
 
